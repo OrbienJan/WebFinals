@@ -11,15 +11,18 @@ namespace WebFinals.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Index(string userName, int IdNumber)
         {
+            ViewBag.Name = userName;
+            ViewBag.IdNumber = IdNumber;
             return View();
+
+
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+       
+
     }
-}
+    }
+    
